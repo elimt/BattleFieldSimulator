@@ -2,9 +2,7 @@ package test;
 
 import static org.junit.Assert.assertTrue;
 import javafx.scene.paint.Color;
-
 import org.junit.Test;
-
 import util.Input;
 import army.Army;
 import actor.*;
@@ -16,12 +14,14 @@ import actor.*;
  * @version Lab Assignment 3: <i>The Hobbit Battlefield Simulator</i>
  */
 
-public class TestArmy {
+public class TestArmy 
+{
 	
 	/** Creates <i>Army</i> object and tests armyAllegiance
 	 * Creates <i>Elf</i> and <i>Orc</i> objects and tests the hasSword, hasShield, Visibility and Replenish fields**/
 	@Test
-	public void testPhase1(){
+	public void testPhase1()
+	{
 		Army army = new Army("forcesOfDarkness", null, Color.RED);
 
 		Actor hobbit = new Hobbit(army);
@@ -61,7 +61,8 @@ public class TestArmy {
 	/** Creates <i>Elf</i> object and tests the boundaries for the Health, Strength and Speed 
 	 * and also testing randomly set variables **/
 	@Test
-	public void testPhase2(){
+	public void testPhase2()
+	{
 		
 		Army army = new Army("forcesOfDarkness", null, null);
 		Actor elf = new Elf(army);
@@ -77,13 +78,12 @@ public class TestArmy {
 		//Testing for randomly set variables and testing to make sure they are within the valid boundary
 		assertTrue(elf.getSpeed()  >=Actor.MIN_SPEED);
 		assertTrue(elf.getSpeed()  <=Actor.MAX_SPEED);
-
-
 	}
 	
 	/** Creates <i>Army/i> object and tests the various functions in the Army class **/
 	@Test
-	public void testPhase3(){
+	public void testPhase3()
+	{
 		//Testing the populate function
 		Army forcesOfLight = new Army("Forces of Light", null, null);
 		forcesOfLight.populate(ActorFactory.Type.HOBBIT, 4);
