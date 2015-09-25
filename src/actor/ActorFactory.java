@@ -12,9 +12,11 @@ import army.Army;
  * @see Actor
  * @version Lab Assignment 3: <i>The Hobbit Battlefield Simulator</i>
  */
-public final class ActorFactory {
+public final class ActorFactory 
+{
 	/** An enum type is a special data type that enables for a variable to be a set of predefined constants. The variable must be equal to one of the values that have been predefined for it. */
-	public enum Type {
+	public enum Type 
+	{
 		HOBBIT()	{ @Override public Actor create(Army armyAllegiance) { return new Hobbit(armyAllegiance); } }, // HOBBIT is a constant, thus all UPPERCASE letters
 		WIZARD()	{ @Override public Actor create(Army armyAllegiance) { return new Wizard(armyAllegiance); } },
 		ORC()			{ @Override public Actor create(Army armyAllegiance) { return new Orc(armyAllegiance); } },
@@ -35,7 +37,8 @@ public final class ActorFactory {
 	 * @param armyAllegiance Used to define the <i>Army</i> allegiance of the <i>Actor</i>.
 	 * @return reference-to <i>Actor</i> object created through random number selection. allegiance 
 	 */
-	public final static Actor createActorRandomSelection(Army armyAllegiance) {
+	public final static Actor createActorRandomSelection(Army armyAllegiance) 
+	{
 		return Type.values()[(int)(Math.random()*(double)(numTypes-1))].create(armyAllegiance); // subtract last because one enum type is RANDOM
 	} // end createActorRandomSelection()
 } // end class ActoryFactory
