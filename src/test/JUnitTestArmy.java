@@ -2,12 +2,9 @@ package test;
 
 import static org.junit.Assert.*;
 import javafx.scene.paint.Color;
-
 import org.junit.Test;
-
 import army.*;
 import actor.*;
-
 /**
  * Simple jUnit class to test behaviour of <i>Army</i> and <i>Actor</i> classes
  * 
@@ -16,10 +13,11 @@ import actor.*;
  * @see Actor
  * @version Lab 4 Assignment
  */
-public class JUnitTestArmy {
-
+public class JUnitTestArmy 
+{
 	@Test
-	public void test() {
+	public void test()
+	{
 		Army forcesOfLight = new Army("Forces of Light", null, Color.RED);
 		final int NUM_ELF = 5;
 		forcesOfLight.populate(ActorFactory.Type.ELF, NUM_ELF);
@@ -32,5 +30,4 @@ public class JUnitTestArmy {
 		forcesOfLight.display();
 		assertTrue("Number Actors created mismatches number stored", forcesOfLight.getSize() == NUM_ELF+NUM_HOBBIT+NUM_ORC+NUM_WIZARD);
 	}
-
 }
